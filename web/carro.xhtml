@@ -1,0 +1,159 @@
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <body>
+        <ui:decorate template="template.xhtml">
+            
+            <ui:define name="tabs">
+                <ul class="tab-links text-center">
+                <li class="">
+                    <a href="InicioServlet">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="TiendaServlet">
+                        <span>Tienda</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="ReservaServlet">
+                        <span>Reserva de pistas</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="CarroServlet">
+                        <span>Carro</span>
+                    </a>
+                </li>
+            </ul>
+            </ui:define>
+            
+            
+                <!-- Cart Table Begin -->
+
+        <ui:define name="content">
+        <div class="cart-table">
+            <div class="container padding-vertical-100">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio Total</th>
+                                    </tr>
+                                </thead>
+                                <!-- /thead -->
+
+                                <tbody>
+                                    <ui:repeat var="item" value="#{conexion.carro}">
+                                    <tr class="bd-bottom">
+                                        <td>
+                                            <img class="shopping-product" src="#{item.imagenmini}" alt=""/>
+                                        </td>
+                                        <td class="product-name">
+                                            <p><h:outputText value="#{item.nombre}"></h:outputText></p>
+                                        </td>
+                                        <!-- /product-name -->
+                                        <td class="product-detail">
+                                            <p style="width:250px"><h:outputText value="#{item.descripcion}"></h:outputText></p>
+                                        </td>
+                                        <!-- /product-detail -->
+                                        <td class="product-price">
+                                            <h5><i class="fa fa-euro"></i><h:outputText value="#{item.precio}"></h:outputText></h5>
+                                        </td>
+                                        <!-- /product-price -->
+                                        <td>
+                                            <div class="input-group quantity-number">
+                                                <input type="text" class="form-control" value="1"/>
+                                                <div class="input-group-btn-vertical">
+                                                    <div class="btn"><i class="fa fa-angle-up"></i>
+                                                    </div>
+                                                    <!-- /btn -->
+                                                    <div class="btn"><i class="fa fa-angle-down"></i>
+                                                    </div>
+                                                    <!-- /btn -->
+                                                </div>
+                                                <!-- /input-group-btn-vertical -->
+                                            </div>
+                                            <!-- /quantity-number -->
+                                        </td>
+                                        <td class="product-price">
+                                            <h5><i class="fa fa-euro"></i><h:outputText value="#{item.precio}"></h:outputText></h5>
+                                        </td>
+                                        <!-- /product-price -->
+                                        <td class="text-center"><a class="btn-close" href="#"><i class="fa fa-close"></i></a>
+                                        </td>
+                                        <!-- /btn-close -->
+                                    </tr>
+                                    </ui:repeat>
+
+                                </tbody>
+                                <!-- /tbody -->
+                            </table>
+                            <!-- /table -->
+                        </div>
+                        <!-- /table-responsive -->
+
+                        <div class="row padding-top-30">
+                            <div class="col-md-6">
+                                <a href="TiendaServlet" class="btn-form">volver a la tienda</a>
+                            </div>
+                            <!-- /column -->
+                            <div class="col-md-6 btn-group text-right">
+                                <a href="#" class="btn-cart margin-right-20">Actualizar carro</a>
+                                <a href="#" class="btn-cart">Vaciar carro</a>
+                            </div>
+                            <!-- /column -->
+                        </div>
+                        <!-- /row -->
+                    </div>
+                    <!-- /column -->
+                </div>
+                <!-- /row -->
+
+                <div class="row margin-top-100">
+
+                    <div class="col-md-4">
+                        <div class="shop_measures">
+                            <h4>pedido</h4>
+                            <ul class="cart-total padding-top-50 margin-bottom-80">
+                                <li>Pedido:<span class="product-price"><i class="fa fa-euro"></i>#{request.getAttribute('preciototal')}</span>
+                                </li>
+                                <li>Envío:<span class="product-price"><i class="fa fa-euro"></i>10.0</span>
+                                </li>
+                                <li>Total:<span class="product-price total"><i class="fa fa-euro"></i>#{request.getAttribute('preciototalenvio')}</span>
+                                </li>
+                            </ul>
+                            <!-- /cart-total -->
+                            <a href="pedido.xhtml?preciototalenvio=#{request.getAttribute('preciototalenvio')}" class="btn-form">PAGAR</a>
+                        </div>
+                        <!-- /shop_measures -->
+                    </div>
+                    <!-- /column -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+
+        <!-- Cart Table End -->
+            </ui:define>          
+        </ui:decorate>
+     
+    </body>
+
+</html>

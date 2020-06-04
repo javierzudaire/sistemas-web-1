@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Javier Zudaire
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+        <body>
+        <ui:decorate template="template.xhtml">
+            
+            <ui:define name="content">
+            <!-- Error Wrapper Begin -->
+                <div class="error-wrapper">
+                    <div class="container text-center padding-vertical-100">
+                        <span class="big-heading-order">PEDIDO REALIZADO</span>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <h2>TOTAL:  <h:outputText value="#{param['preciototalenvio']}" />€</h2>
+                        <br/>
+                        <h4 class="margin-top-50">Fecha estimada de entrega: 09/12/19</h4>
+                        <p>Hemos recibido tu pedido. Te enviaremos un correo electrónico de confirmación con el número de seguimiento en cuanto salga de nuestro almacén. Si alguno de los datos de tu pedido es incorrecto, puedes cancelarlo durante los 15 minutos posteriores a su realización.</p>
+
+
+                        
+                    </div>
+                    <!-- /container -->
+                </div>
+
+                <!-- Error Wrapper End -->
+        
+            </ui:define>          
+        </ui:decorate>
+        </body>
+</html>

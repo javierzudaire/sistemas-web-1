@@ -1,0 +1,169 @@
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    <head>
+        <title>Ajustes</title>
+        <style>
+            .container {
+               width: 500px;
+               clear: both;
+            }
+
+            .container input {
+              width: 100%;
+              clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <script>
+            function myFunction() {
+              alert("Usuario añadido correctamente");
+            }
+        </script>
+        
+        <ui:decorate template="template.xhtml">
+            
+            <ui:define name="content">
+                <div class="blog-post">
+                <h4>Ajustes de tenisCEU</h4>
+                </div>
+                
+                <form action="index.html">
+                <button style="padding: 20px 34px;text-align: center;background-color: #000; color: white;border: none; float: right; margin-top: -50px;">CERRAR SESIÓN</button>
+                </form>
+                
+                <br/>
+                <br/>
+                <br/>
+                
+                <div class="text-center">
+                <h2 class="double-line"><span>Stock</span></h2>
+                </div>
+                <div class="cart-table">
+                <div class="container padding-vertical-100">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Producto</th>
+                                            <th>Nombre</th>
+                                            <th>Descripción</th>
+                                            <th>Precio</th>
+                                            <th>Unidades</th>
+                                        </tr>
+                                    </thead>
+                                    <!-- /thead -->
+
+                                    <tbody>
+                                        <ui:repeat var="item" value="#{conexion.tienda}">
+                                        <tr class="bd-bottom">
+                                            <td>
+                                                <img class="shopping-product" src="#{item.imagenmini}" alt=""/>
+                                            </td>
+                                            <td class="product-name">
+                                                <p><h:outputText value="#{item.nombre}"></h:outputText></p>
+                                            </td>
+                                            <!-- /product-name -->
+                                            <td class="product-detail">
+                                                <p style="width:350px"><h:outputText value="#{item.descripcion}"></h:outputText></p>
+                                            </td>
+                                            <!-- /product-detail -->
+                                            <td class="product-price">
+                                                <h5><i class="fa fa-euro"></i><h:outputText value="#{item.precio}"></h:outputText></h5>
+                                            </td>
+                                            <!-- /product-price -->
+                                            
+                                            <td class="product-price">
+                                                <h5><h:outputText value="300 uds."></h:outputText></h5>
+                                            </td>
+                                            <!-- /product-price -->
+                                            <td class="text-center"><a class="btn-close" href="#"><i class="fa fa-close"></i></a>
+                                            </td>
+                                            <!-- /btn-close -->
+                                        </tr>
+                                        </ui:repeat>
+
+                                    </tbody>
+                                    <!-- /tbody -->
+                                </table>
+                                <!-- /table -->
+                            </div>
+                            <!-- /table-responsive -->
+                        </div>
+                    </div>
+                    <!-- /column -->
+                </div>
+                <!-- /row -->
+                </div>
+                
+                <div class="text-center">
+                <h2 class="double-line"><span>Añadir usuario</span></h2>
+                </div>
+                <br/>
+                <br/>
+                <div class="container">
+                <form name ='addUser' method="get" action='AddUsuario' id="formulario">
+                    <table>
+                        <div style="line-height: 22pt">
+                        Nombre:                <input type="text" name="nombre"> </input> <br/><br/>
+                        Apellido:              <input type="text" name="apellido"></input> <br/><br/>
+                        DNI:                   <input type="text" name="DNI"></input> <br/><br/>
+                        Email:                 <input type="text" name="email"></input> <br/><br/>
+                        Contraseña:            <input type="text" name="password"></input> <br/><br/>
+                        Tipo de usuario (0-2): <input type="text" name="tipo"></input> <br/><br/></div>
+                        <input type="submit" onclick="myFunction()" style="padding: 15px 32px;text-align: center;background-color: #e7e7e7; color: black;border: none;" value="Dar de alta"></input>
+                    </table>
+                </form>
+                </div>
+                
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                
+                <div class="text-center">
+                <h2 class="double-line"><span>Añadir producto</span></h2>
+                </div>
+                <br/>
+                <br/>
+                <div class="container">
+                <form name ='addUser' method="get" action='AddProducto' id="formulario">
+                    <table>
+                        <div style="line-height: 22pt">
+                        Nombre producto:                <input type="text" name="nombre"> </input> <br/><br/>
+                        Precio:              <input type="text" name="precio"></input> <br/><br/>
+                        Descripción:                   <input type="text" name="descripcion"></input> <br/><br/>
+                        Valoración:                   <input type="text" name="valoracion"></input> <br/><br/>
+                        Imagen (base64):                   <input type="text" name="imagen"></input> <br/><br/>
+                        Imagen Mini (base64):                   <input type="text" name="imagen_mini"></input> <br/><br/></div>
+                        <input type="submit" style="padding: 15px 32px;text-align: center;background-color: #e7e7e7; color: black;border: none;" value="Añadir producto"></input>
+                    </table>
+                </form>
+                </div>
+                
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                
+            </ui:define>          
+        </ui:decorate>
+     
+    </body>
+
+</html>

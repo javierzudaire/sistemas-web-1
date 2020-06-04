@@ -1,0 +1,104 @@
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+     >
+    <head>
+        <title>Reservas</title>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    </head>
+    <body>
+        <ui:decorate template="template.xhtml">
+            
+            <ui:define name="tabs">
+                <ul class="tab-links text-center">
+                <li class="">
+                    <a href="InicioServlet">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="TiendaServlet">
+                        <span>Tienda</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="ReservaServlet">
+                        <span>Reserva de pistas</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="CarroServlet">
+                        <span>Carro</span>
+                    </a>
+                </li>
+            </ul>
+            </ui:define>
+            
+            <ui:define name="content">
+                
+                <div id="contenReservas">
+                    <div class="preferencias">
+                        <form class="formulario" id="formRes" action="CheckReservas" method="post">
+                            <div class="izq">
+                            <label>Dia de la reserva:</label>
+                                <input class="s" type="date" id="fechas" name="fechas" value= "${fecha}" min="2019/10/10" max="2020-12-31"/>
+                                 <br/><br/>
+                                <p id="line">Selecciona el deporte:</p>
+                                <label id="caja"><input type="radio" name="deporte" id="deporte1" value="Tenis" checked="true"></input>
+                                    Tenis</label>
+                                <label class="itemC"><input class="s" type="radio" name="deporte" id="deporte2" value="Padel"></input>
+                                Padel</label><br/>
+                                 
+                                <select name="techo" id="techo">
+                                    <option value="${techo}">${techo}</option>
+                                </select>
+                                <br/>
+                                </div>
+                                <div  class="derec" id="he3" >
+                                    <label class="textoForm">Horas disponibles:</label>
+                                        <select name='horas' id="horas">
+                                            <option value="eleccion">Elige Hora</option>
+                                            <c:forEach items="${lista}" var="hora">
+                                                <option value="${hora}">${hora}</option>
+                                            </c:forEach>
+                                        </select>
+                                    <br/>
+                                    <input class="itemC2" id="reser" type="button" align="center" value="Reservar" onclick="reservar()"></input>
+                                </div>
+                                
+                            <br/>
+
+                        </form>
+                    </div>
+                    <c:if test="${deporte=='Padel'}">
+                                        <script>
+                                            var radio = document.getElementById("deporte2");
+                                            radio.checked = "true";
+                                            alert('sda');
+                                         </script>
+                    </c:if>  
+                    
+                    
+                    
+                </div>
+                <!--
+                
+                </script>-->
+                
+                
+                <script src="js/lib/jquery.min.js"></script>  
+                <script src="js/Reservas.js"></script>  
+
+            </ui:define>          
+        </ui:decorate>
+     
+    </body>
+
+</html>

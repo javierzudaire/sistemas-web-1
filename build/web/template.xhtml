@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8"/>
+    <meta name="description" content="Orise-ecommerce"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <!-- Page Title -->
+    <title>#{request.getAttribute('message')}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png" type="image/png"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="css/media.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/owl.carousel.css"/>
+    <link rel="stylesheet" href="css/owl.theme.css"/>
+    <link rel="stylesheet" href="css/owl.transitions.css"/>
+    <link rel="stylesheet" href="css/jquery.bxslider.css"/>
+    <link rel="stylesheet" href="css/elegant-icons.css"/>
+    <link rel="stylesheet" href="css/magnific-popup.css"/>
+    <link rel="stylesheet" href="css/flexslider.css"/>
+    <link rel="stylesheet" href="css/jquery-ui.css"/>
+</head>
+
+<body>
+
+    <!-- Loader Begin -->
+
+    <div class="loader">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+        <p>tenisCEU</p>
+    </div>
+
+    <!-- Loader End -->
+
+    <!-- Back To Top Begin -->
+
+    <div id="back-top">
+        <a href="#" class="scroll">
+            <i class="arrow_carrot-up"></i>
+        </a>
+    </div>
+
+    <!-- Back To Top End -->
+
+    <!-- Site Wrapper Begin -->
+
+    <div class="wrapper">
+
+        <!-- Header Begin -->
+
+        <header class="header absolute bg-white">
+            <div class="container">
+                <div id="nav-bar" class="side-nav toggled">
+
+                            <center><img class="logo" src="img/logo-dark.png"  height="90" alt=""/></center>
+                        <!-- /logo-wrapper -->
+                    
+                    <!-- /nav-logo -->
+
+                    <div class="pull-right">
+                        <div class="right-nav">
+                            <ul>
+                                <li>
+                                    <a href="#" id="search-trigger"><i class="fa fa-search"></i></a>
+                                    <form action="#" id="search" method="get">
+                                        <div class="input">
+                                            <div class="container">
+                                                <input class="search" placeholder="Search for products..." type="text"/>
+                                                <button class="submit" type="submit" value="close"><i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                            <!-- /container -->
+                                        </div>
+                                        <!-- /input -->
+                                        <button class="icon_close" id="close" type="reset"></button>
+                                    </form>
+                                    <!-- /form-->
+                                </li>        
+
+                                <li>
+                                    <a href="CarroServlet">
+                                        <i class="icon_bag_alt"></i>
+                                        <span class="notice-num"><h:outputText value="#{request.getAttribute('itemscarro')}" /></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /right-nav -->
+                    </div>
+                    <!-- /pull-right -->
+                </div>
+                <!-- /side-nav -->
+            </div>
+            <!-- /container -->
+        </header>
+
+        <!-- header End -->
+
+        <!-- Page Header Begins -->
+
+        <div id="page-header">
+            <div class="header-bg-parallax">
+                <div class="overlay">
+                    <div class="container text-center">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <img height="150" src="https://pics.clipartpng.com/Tennis_Rackets_with_Ball_PNG_Clipart-859.png"/>
+                        <br/>
+                        <br/>
+                        <br/>
+                            
+                            <!-- /header-small-nav -->
+                        <!-- /header-description -->
+                    </div>
+                    <!-- /container -->
+                </div>
+                <!-- /overlay -->
+            </div>
+            <!-- /header-bg-parallax -->
+        </div>
+
+        <!-- Page Header End -->
+
+        <!-- Tabs Begin -->
+
+        <div class="container padding-bottom-100">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tabs">
+
+                         <ui:insert name="tabs"></ui:insert>
+
+                        <!-- /tab-links -->
+                        
+                        <div id="content">
+                            <ui:insert name="content">Content</ui:insert>
+                        </div>
+
+                    </div>
+                    <!-- /tabs -->
+                </div>
+                <!-- /column -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+
+        <!-- Tabs End -->
+
+        <!-- Footer Begin -->
+
+        <footer class="footer">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer-social">
+                            <ul>
+                                <li><a href="#">Facebook</a>
+                                </li>
+                                <li><a href="#">Twitter</a>
+                                </li>
+                                <li><a href="#">LinkedIn</a>
+                                </li>
+                                <li><a href="#">Google+</a>
+                                </li>
+                                <li><a href="#">Instagram</a>
+                                </li>
+                                <li><a href="#" class="bd-right">Skype</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /footer-social -->
+
+                        <div class="logo-footer">
+                            <img src="img/logo.png" alt="" />
+                        </div>
+                        <!-- /logo-footer -->
+
+                        <div class="footer-payments margin-top-50">
+                            <ul>
+                                <li><img src="img/visa.png" alt="" />
+                                </li>
+                                <li><img src="img/mastercard.png" alt="" />
+                                </li>
+                                <li><img src="img/discover.png" alt="" />
+                                </li>
+                                <li><img src="img/americanexpress.png" alt="" />
+                                </li>
+                                <li><img src="img/paypal.png" alt="" />
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /footer-payments -->
+                    </div>
+                    <!-- /column -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+            <div class="copyright-info padding-vertical-30 text-center">
+                <p class="ft-desc">Copyright 2019</p>
+            </div>
+            <!-- /copyrights-info -->
+        </footer>
+
+        <!-- Footer End -->
+
+    </div>
+
+    <!-- Site Wrapper End -->
+
+    <!--- Scripts -->
+
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/vendors/bootstrap.min.js"></script>
+    <script src="js/lib/jquery.waypoints.min.js"></script>
+    <script src="js/lib/moderniz.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/vendors/owl.carousel.min.js"></script>
+    <script src="js/vendors/jquery.bxslider.min.js"></script>
+    <script src="js/vendors/jquery.magnific-popup.min.js"></script>
+    <script src="js/vendors/jquery.flexslider-min.js"></script>
+    <script src="js/vendors/flexslider-init.js"></script>
+    <script src="js/vendors/smoothscroll.js"></script>
+
+</body>
+</html>

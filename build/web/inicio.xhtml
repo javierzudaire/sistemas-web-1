@@ -1,0 +1,73 @@
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <body>
+        <ui:decorate template="template.xhtml">
+            
+            <ui:define name="tabs">
+                <ul class="tab-links text-center">
+                <li class="active">
+                    <a href="InicioServlet">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="TiendaServlet">
+                        <span>Tienda</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="ReservaServlet">
+                        <span>Reserva de pistas</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="CarroServlet">
+                        <span>Carro</span>
+                    </a>
+                </li>
+            </ul>
+            </ui:define>
+            
+            <ui:define name="content">
+                <div class="tab-content">
+                            <div id="tab1" class="tab active">
+                                <div class="tab-description">
+                                    <br/>
+                                    <br/>
+                                    <h1>TenisCEU, el club de todos los estudiantes</h1>
+                                    <br/>
+                                    <img src="https://img.pngio.com/tennis-png-free-image-png-mart-tennis-png-free-770_630.png" height="400" alt="" />
+                                    <br/>
+                                    <p>TenisCEU es una asociación deportiva, sin ánimo de lucro, cuyo objeto exclusivo es el fomento y la práctica de la actividad física y deportiva, teniendo como principal modalidad deportiva la del tenis y está adscrita a la Real Federación Española de Tenis desde el 5 de abril de 2013.</p>
+                                    <ul>
+                                        <li>Compra todo tu material en la tienda online</li>
+                                        <li>Reverva pistas online</li>
+                                    </ul>
+                                    <h4>TORNEOS</h4>
+                                    <ul>
+                                        <li>Torneo Juan Herrera 2019</li>
+                                        <li>Campeonato Social de Tenis 2020</li>
+                                        <li>Mini-Torneos Pádel Semanales</li>
+                                        <li>XI Torneo Unicef (2020)</li>
+                                    </ul>
+                                </div>
+                                <!-- /tab-description -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <center><iframe width= "940" height="530" src="#{request.getAttribute('video')}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></center>
+                            </div>
+                </div>
+            </ui:define>          
+        </ui:decorate>
+     
+    </body>
+
+</html>

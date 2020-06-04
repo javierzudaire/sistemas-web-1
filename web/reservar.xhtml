@@ -1,0 +1,76 @@
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <body>
+        <ui:decorate template="template.xhtml">
+            
+            <ui:define name="tabs">
+                <ul class="tab-links text-center">
+                <li class="">
+                    <a href="InicioServlet">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="TiendaServlet">
+                        <span>Tienda</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="ReservaServlet">
+                        <span>Reserva de pistas</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="CarroServlet">
+                        <span>Mi carro</span>
+                    </a>
+                </li>
+            </ul>
+            </ui:define>
+            
+            <ui:define name="content">
+                
+                <div id="contenReservas">
+                    <div class="horas">
+                <form class="formulario" id="f" action="/tenisCEU/ReservaHoras" method="post">
+                    <label>Dia de la reserva:</label>
+                    <input class="s" type="date" id="fechas" name="fechas"
+                           value= "21/11/2019"
+                           min="2019/10/10" max="2020-12-31">
+                    </input>
+                    <br/><br/>
+                    <p id="line">Selecciona el deporte:</p>
+                    <label id="caja"><input type="radio" name="deporte" id="deporte1" value="1" ></input>
+                        Tenis</label>
+                    <label class="itemC"><input class="s" type="radio" name="deporte" id="deporte2" value="2"></input>
+                        Padel</label><br/>
+                    <select name="techo" id="techo">
+                        <option value="no">Elige tipo...</option>
+                        <option value="2">Cubierta</option>
+                        <option value="1">Descubierta</option>
+                    </select>
+                    <br/>
+                    <input class="itemC" type="button" align="center" value="Enviar" onclick="mostrarReservas()"></input>
+                    <p id="alerta" class="itemC" color="white">Tienes que seleccionar un deporte</p>
+                </form>
+                    </div>
+                    
+                </div>
+                
+                
+                <script src="js/lib/jquery.min.js"></script>  
+                <script src="js/Reservas.js"></script>  
+
+            </ui:define>          
+        </ui:decorate>
+     
+    </body>
+
+</html>

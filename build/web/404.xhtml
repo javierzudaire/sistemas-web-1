@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Javier Zudaire
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+        <body>
+        <ui:decorate template="template.xhtml">
+            
+            <ui:define name="tabs">
+                <ul class="tab-links text-center">
+                <li class="active">
+                    <a href="InicioServlet">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="TiendaServlet">
+                        <span>Tienda</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="ReservaServlet">
+                        <span>Reserva de pistas</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="CarroServlet">
+                        <span>Mi carro</span>
+                    </a>
+                </li>
+            </ul>
+            </ui:define>
+            
+            <ui:define name="content">
+            <!-- Error Wrapper Begin -->
+                <div class="error-wrapper">
+                    <div class="container text-center padding-vertical-100">
+                        <span class="error-big-heading">404</span>
+                        <h4 class="margin-top-50">página no encontrada</h4>
+                        <h2>UPPS! TE HAS PERDIDO</h2>
+                        <p>La página que buscas ha sido movida o no existe, puedes volver a página de inicio. Si el problema no se soluciona, envíanos un email a <a href="mailto:soporte@tenisceu.com">soporte@tenisceu.com</a>
+                        </p>
+                        
+                    </div>
+                    <!-- /container -->
+                </div>
+
+                <!-- Error Wrapper End -->
+        
+            </ui:define>          
+        </ui:decorate>
+        </body>
+</html>

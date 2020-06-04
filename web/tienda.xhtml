@@ -1,0 +1,238 @@
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <body>
+        <ui:decorate template="template.xhtml">
+            
+            <ui:define name="tabs">
+                <ul class="tab-links text-center">
+                <li class="">
+                    <a href="InicioServlet">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="TiendaServlet">
+                        <span>Tienda</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="ReservaServlet">
+                        <span>Reserva de pistas</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="CarroServlet">
+                        <span>Carro</span>
+                    </a>
+                </li>
+            </ul>
+            </ui:define>
+            
+            <ui:define name="content">
+                <div class="container padding-vertical-100">
+            <div class="row">
+                <!-- Siderbar -->
+                <div class="col-md-3 col-sm-4 sidebar">
+                    <div class="sidebar-search padding-bottom-10">
+                        <h4>Buscar producto</h4>
+                        <form class="product-search padding-top-40 padding-bottom-5">
+                            <button class="btn-search" type="submit" title="Search">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            <!-- /button -->
+                            <input type="text" class="form-control" placeholder="Search products..."/>
+                        </form>
+                        <!-- /product-search -->
+                    </div>
+                    <!-- /sidebar-search -->
+
+                    <div class="product-categories padding-vertical-5">
+                        <h4>Categorias</h4>
+                        <div class="product-categories-list">
+                            <ul class="padding-top-20">
+                                <li><a href="#">Ropa</a><span>3</span>
+                                </li>
+                                <li><a href="#">Raquetas</a><span>1</span>
+                                </li>
+                                <li><a href="#">Accesorios</a><span>2</span>
+                                </li>
+                                <li><a href="#">Material</a><span>3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /product-categories-list-->
+                    </div>
+                    <!-- /product-categories-->
+
+                    <div class="best-product padding-vertical-5">
+                        <h4>Mejores Productos</h4>
+                        <ul class="padding-top-10">
+                            <li>
+                                <a href="#"><img src="#{conexion.tienda[6].imagen}" alt="" width="65" height="84"/>
+                                </a>
+                                <div class="product-rate">
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt not-rated"></i>
+                                </div>
+                                <!-- /product-rate -->
+                                <div class="product-title" style="margin-top: 10px; margin-bottom: 8px; font-weight: 500;">
+                                    <p><h:outputText value="#{conexion.tienda[6].nombre}"></h:outputText>
+                                    </p>
+                                </div>
+                                <div class="product-price">
+                                    <p><i class="fa fa-euro"></i>#{conexion.tienda[6].precio}</p>
+                                </div>
+                                <!-- /product-price -->
+                            </li>
+
+                            <li>
+                                <a href="#"><img src="#{conexion.tienda[4].imagen}" alt="" width="65" height="84"/>
+                                </a>
+                                <div class="product-rate">
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt not-rated"></i>
+                                </div>
+                                <!-- /product-rate -->
+                                <div class="product-title" style="margin-top: 10px; margin-bottom: 8px; font-weight: 500;">
+                                    <p><h:outputText value="#{conexion.tienda[4].nombre}"></h:outputText>
+                                    </p>
+                                </div>
+                                <div class="product-price">
+                                    <p><i class="fa fa-euro"></i>#{conexion.tienda[4].precio}</p>
+                                </div>
+                                <!-- /product-price -->
+                            </li>
+
+                            <li>
+                                <a href="#"><img src="#{conexion.tienda[0].imagen}" alt="" width="65" height="84"/>
+                                </a>
+                                <div class="product-rate">
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt not-rated"></i>
+                                </div>
+                                <!-- /product-rate -->
+                                <div class="product-title" style="margin-top: 10px; margin-bottom: 8px; font-weight: 500;">
+                                    <p><h:outputText value="#{conexion.tienda[0].nombre}"></h:outputText>
+                                    </p>
+                                </div>
+                                <div class="product-price">
+                                    <p><i class="fa fa-euro"></i>#{conexion.tienda[0].precio}</p>
+                                </div>
+                                <!-- /product-price -->
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /best-product -->
+                </div>
+                <!-- /sidebar -->
+
+                <!-- Product Item List Begin -->
+
+                                                        
+                <script>
+                    function descripcion(x) {
+                        if(x==="Raqueta Wilson Ultra 100"){
+                            alert("Esta raqueta de 300g al equilibrio neutro (32 cm) es una arma ideal para enviar golpes poderosos en fondo de cancha");
+                        } else if(x==="Camiseta Nike DRI-FIT"){
+                            alert("Gracias a la tecnología Climalite que favorece la circulación del aires se mantiene seca y fresco durante todo el ejercicio");
+                        } else if(x==="Tubo Penn de 3 pelotas"){
+                            alert("Esta pelota intermediaria es 25% más rápida que la pelota estándar");
+                        } else if(x==="Gorra Nike"){
+                            alert("Protegerá eficazmente del sol gracias a su visera encurvada");
+                        } else if(x==="Calcetines Training"){
+                            alert("Confeccionados en tejido transpirable, mantendrán tus pies frescos y secos durante todo el ejercicio");
+                        } else if(x==="Cordaje Babolat Cuerda Natural"){
+                            alert("Comodidad, potencia y mantenimiento de tensión son las grandes ventajas de este legendario cordaje Babolat");
+                        } else if(x==="Chándal Nike Junior Futura"){
+                            alert("Su tejido suave y ligero será muy cómodo de llevar durante sus diferentes actividades");
+                        } else if(x==="Banda DRI-FIT"){
+                            alert("Confeccionado en poliéster ligero, este conjunto te dará una agradable sensación de suavidad para un confort óptimo");
+                        } else {
+                            alert("Descripción no disponible");
+                        }
+                    }
+                </script>
+                    
+                <div class="product-item-list col-md-9 col-sm-8 padding-top-20 text-center">
+                    
+                    <!-- /product-item -->
+                    <ui:repeat var="item" value="#{conexion.tienda}">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="product-item padding-bottom-60">
+                            <div class="product-image">
+                                <p><a href="#"><img src="#{item.imagen}" alt=""/></a></p>
+                                <div class="product_overlay">
+                                    <div class="product-cart">
+                                        <a href="CarroServlet?nombre=#{item.nombre}">
+                                            <p>+ Añadir al carro</p>
+                                        </a>
+
+                                        
+                                        <div class="product-icons">
+                                            <ul>
+                                                <li class="icon-bg-color"><a onclick="descripcion('#{item.nombre}')" title="detalles"><i class="fa fa-sliders"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- /product-icons -->
+                                    </div>
+                                    <!-- /product-cart -->
+                                </div>
+                                <!-- /product_overlay -->
+                            </div>
+                            <!-- /product-image -->
+                            <div class="product-short-detail padding-top-20">
+                                <div class="product-rate">
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt"></i>
+                                    <i class="icon_star_alt not-rated"></i>
+                                </div>
+                                <!-- /product-rate -->
+                                <div class="product-title">
+                                    <p><a href="#"><h:outputText value="#{item.nombre}"></h:outputText></a>
+                                    </p>
+                                </div>
+                                <!-- /product-title -->
+                                <div class="product-price">
+                                    <p><i class="fa fa-euro"></i><h:outputText value="#{item.precio}"></h:outputText></p>
+                                    <del><i class="fa fa-euro"></i><h:outputText value="#{item.precio2}"></h:outputText></del>
+                                </div>
+                                <!-- /product-price -->
+                            </div>
+                            <!-- /product-short-detail -->
+                        </div>
+                        
+                    </div>
+                    </ui:repeat>
+                    <!-- /column -->
+                </div>
+                <!-- /product-item-list -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+            </ui:define>          
+        </ui:decorate>
+     
+        </body>
+
+</html>
